@@ -9,19 +9,20 @@ const publicRoutes = FlowRouter.group({
   triggersEnter: [ publicRedirect ]
 });
 
-publicRoutes.route( '/signup', {
-  name: 'signup',
-  action() {
-    BlazeLayout.render( 'default', { yield: 'loginSignup' } );
-  }
-});
-
 publicRoutes.route( '/login', {
   name: 'login',
   action() {
     BlazeLayout.render( 'default', { yield: 'loginSignup' } );
   }
 });
+
+publicRoutes.route( '/admin-login', {
+  name: 'admin-login',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'adminLogin' } );
+  }
+});
+
 
 publicRoutes.route( '/recover-password', {
   name: 'recover-password',

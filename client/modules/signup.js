@@ -51,7 +51,7 @@ let _handleSignup = ( template ) => {
     password: Accounts._hashPassword( password )
   };
 
-  Meteor.call( 'addUser', user, ( error ) => {
+  Meteor.createUser( user, ( error ) => {
     if ( error ) {
       Bert.alert( error.reason, 'danger' );
     } else {
