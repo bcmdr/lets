@@ -56,7 +56,6 @@ let _handleSignup = ( template ) => {
       Bert.alert( error.reason, 'danger' );
     } else {
       Meteor.loginWithPassword( user.email, password );
-      Bert.alert( 'Welcome!', 'success' );
     }
   });
 };
