@@ -36,10 +36,3 @@ adminRoutes.route( '/submit', {
     BlazeLayout.render( 'default', { yield: 'submit' } );
   }
 });
-
-adminRoutes.route( '/viewers', {
-  name: 'viewers',
-  action() {
-    BlazeLayout.render( 'default', { yield: 'viewers' } );
-  }
-});
