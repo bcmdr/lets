@@ -5,6 +5,8 @@
   "private": {
     "MAIL_URL": "smtp://postmaster%40mg.shallwi.co:bd29e4fccd51f43516940f19653509da@smtp.mailgun.org:587",
     "ADMIN_PASSWORD": "password",
-    "DOMAIN": "localhost:3000"
+    "DOMAIN": "localhost:3000",
+    "FACEBOOK_APP_ID": "498099880350063",
+    "FACEBOOK_APP_SECRET": "6819d3783cde6b73e8a3d31dbf3dafb3"
   }
 }
