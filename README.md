@@ -1,4 +1,15 @@
-# The Meteor Chef - Base
+# Lets
+
+Where awesome people invite each other to do awesome things.
+
+## References
+
+- [Building a User Admin](https://themeteorchef.com/recipes/building-a-user-admin/)
+- [Making Use of Settings.json](https://themeteorchef.com/snippets/making-use-of-settings-json/)
+
+## Sources
+
+### The Meteor Chef - Base
 A starting point for Meteor apps.
 
 <table>

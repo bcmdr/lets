@@ -3,6 +3,8 @@
     "key": "value"
   },
   "private": {
-    "MAIL_URL": ""
+    "MAIL_URL": "smtp://postmaster%40mg.shallwi.co:bd29e4fccd51f43516940f19653509da@smtp.mailgun.org:587",
+    "ADMIN_PASSWORD": "password",
+    "DOMAIN": "localhost:3000"
   }
 }

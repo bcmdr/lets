@@ -1,6 +1,6 @@
-const publicRedirect = () => {
+const publicRedirect = ( context, redirect ) => {
   if ( Meteor.userId() ) {
-    FlowRouter.go( 'index' );
+    Modules.both.redirectUser( { redirect: redirect } );
   }
 };
 
@@ -34,5 +34,12 @@ publicRoutes.route( '/reset-password/:token', {
   name: 'reset-password',
   action() {
     BlazeLayout.render( 'default', { yield: 'resetPassword' } );
+  }
+});
+
+publicRoutes.route( '/invite/:token', {
+  name: 'invite',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'invite' } );
   }
 });

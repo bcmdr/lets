@@ -1,8 +1,9 @@
 let administrators = [
   {
-    name: { first: 'Admin', last: 'McAdmin' },
-    email: 'admin@admin.com',
-    password: 'password'
+    username: 'Shallwi',
+    name: { first: 'Team', last: 'Shallwi' },
+    email: 'sup@shallwi.co',
+    password: Meteor.settings.private.ADMIN_PASSWORD
   }
 ];
 
@@ -27,7 +28,14 @@ let _createUsers = ( users ) => {
         userExists = _checkIfUserExists( user.email );
 
     if ( !userExists ) {
-      _createUser( user );
+      let userId  = _createUser( user ),
+          isAdmin = _checkIfAdmin( user.email );
+
+      if ( isAdmin ) {
+        Roles.setUserRoles( userId, 'admin' );
+      } else {
+        Roles.setUserRoles( userId, 'viewer' );
+      }
     }
   }
 };
@@ -37,12 +45,21 @@ let _checkIfUserExists = ( email ) => {
 };
 
 let _createUser = ( user ) => {
-  Accounts.createUser({
+  let userId = Accounts.createUser({
+    username: user.username,
     email: user.email,
     password: user.password,
     profile: {
       name: user.name
     }
+  });
+
+  return userId;
+};
+
+let _checkIfAdmin = ( email ) => {
+  return _.find( administrators, ( admin ) => {
+    return admin.email === email;
   });
 };
 
@@ -51,6 +68,7 @@ let _generateFakeUsers = ( count ) => {
 
   for ( let i = 0; i < count; i++ ) {
     users.push({
+      username: faker.internet.userName(),
       name: { first: faker.name.firstName(), last: faker.name.lastName() },
       email: faker.internet.email(),
       password: 'password'
