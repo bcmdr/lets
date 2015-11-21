@@ -33,8 +33,6 @@ let _createUsers = ( users ) => {
 
       if ( isAdmin ) {
         Roles.setUserRoles( userId, 'admin' );
-      } else {
-        Roles.setUserRoles( userId, 'viewer' );
       }
     }
   }
