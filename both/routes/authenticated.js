@@ -43,11 +43,11 @@ authenticatedRoutes.route( '/users', {
   }
 });
 
-authenticatedRoutes.route( '/submitters', {
-  name: 'submitters',
+authenticatedRoutes.route( '/submit', {
+  name: 'submit',
   triggersEnter: [ blockUnauthorizedSubmitter ],
   action() {
-    BlazeLayout.render( 'default', { yield: 'submitters' } );
+    BlazeLayout.render( 'default', { yield: 'submit' } );
   }
 });
 
