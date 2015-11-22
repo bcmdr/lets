@@ -13,7 +13,18 @@
       <tbody>
         {{#each users}}
           <tr>
-            <td class="text-left text-middle">{{#if isCurrentUser _id}}<label class="label label-success">You!</label>{{/if}} {{emails.[0].address}}</td>
+            <td class="text-left text-middle">
+              {{#if isCurrentUser _id}}
+                <label class="label label-success">You!</label>
+              {{/if}}
+              {{#if emails.[0].address}}
+                {{emails.[0].address}}
+              {{else}}
+                {{#if services.facebook.email}}
+                  {{services.facebook.email}} (fb)
+                {{/if}}
+              {{/if}}
+            </td>
             <td>
               <select {{disableIfAdmin _id}} name="userRole" class="form-control">
                 <option selected="{{selected roles.[0] 'admin'}}" value="admin">Admin</option>

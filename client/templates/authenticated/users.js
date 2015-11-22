@@ -1,5 +1,5 @@
 Template.users.onCreated( () => {
-  Template.instance().subscribe( 'users' );
+  Template.instance().subscribe( 'adminUsers' );
 });
 
 Template.users.helpers({
