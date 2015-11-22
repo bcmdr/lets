@@ -19,7 +19,6 @@ let _prepareEmail = ( token ) => {
 };
 
 let _sendUserInvitation = ( email, content ) => {
-  console.log("Sending email to: " + email);
   Email.send({
     to: email,
     from: "Team Shallwi <sup@shallwi.co>",

@@ -1,5 +1,5 @@
 let route = ( options ) => {
-  return options && options.redirect ? _sendUserToDefault( options.redirect ) : _sendUserToDefault();
+  return ( options && options.redirect ) ? _sendUserToDefault( options.redirect ) : _sendUserToDefault();
 };
 
 let _sendUserToDefault = ( redirect ) => {
