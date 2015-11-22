@@ -10,11 +10,11 @@ let _sendUserToDefault = ( redirect ) => {
   }
 
   if ( roles[0] === 'submitter' )  {
-    _redirectUser( 'submitters', redirect );
+    _redirectUser( 'index', redirect );
   }
 
   if ( roles[0] === 'viewer' ) {
-    _redirectUser( 'viewers', redirect );
+    _redirectUser( 'index', redirect );
   }
 };
 

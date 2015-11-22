@@ -1,14 +1,13 @@
 Meteor.methods({
-  acceptInvitation( user ) {
+  acceptUserInvitation( user ) {
     check( user, {
-      username: String,
       email: String,
       password: Object,
       token: String
     });
 
     try {
-      var userId = Modules.server.acceptInvitation( user );
+      var userId = Modules.server.acceptUserInvitation( user );
       return userId;
     } catch( exception ) {
       return exception;

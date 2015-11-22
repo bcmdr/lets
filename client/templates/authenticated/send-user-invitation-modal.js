@@ -1,4 +1,4 @@
-Template.sendInvitationModal.events({
+Template.sendUserInvitationModal.events({
   'submit form' ( event, template ) {
     event.preventDefault();
 
@@ -6,14 +6,14 @@ Template.sendInvitationModal.events({
         role  = template.find( "[name='roles'] option:selected" ).value;
 
     if ( email && role !== "" ) {
-      Meteor.call( "sendInvitation", {
+      Meteor.call( "sendUserInvitation", {
         email: email,
         role: role
       }, ( error, response ) => {
         if ( error ) {
           Bert.alert( error.reason, "warning" );
         } else {
-          $( "#send-invitation-modal" ).modal( 'hide' );
+          $( "#send-user-invitation-modal" ).modal( 'hide' );
           $( '.modal-backdrop' ).hide();
           Bert.alert( "Invitation sent!", "success" );
         }

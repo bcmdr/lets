@@ -9,11 +9,6 @@ let _validate = ( form, template ) => {
 let validation = ( template ) => {
   return {
     rules: {
-      username: {
-        required: true,
-        minlength: 3,
-        maxlength: 20
-      },
       emailAddress: {
         required: true,
         email: true
@@ -24,11 +19,6 @@ let validation = ( template ) => {
       }
     },
     messages: {
-      username: {
-        required: 'Please enter a username here.',
-        minlength: 'Use at least three characters, please.',
-        maxlength: 'Use at most twenty characters, please.'
-      },
       emailAddress: {
         required: 'Please enter your email address here.',
         email: 'Is this email address legit?'
@@ -46,7 +36,6 @@ let _handleSignup = ( template ) => {
   let password = template.find( '[name="password"]' ).value;
 
   let user = {
-    username: template.find( '[name="username"]' ).value,
     email: template.find( '[name="emailAddress"]' ).value,
     password: Accounts._hashPassword( password )
   };

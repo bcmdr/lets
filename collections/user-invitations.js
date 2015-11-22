@@ -1,18 +1,18 @@
-Invitations = new Meteor.Collection( 'invitations' );
+UserInvitations = new Meteor.Collection( 'invitations' );
 
-Invitations.allow({
+UserInvitations.allow({
   insert: () => false,
   update: () => false,
   remove: () => false
 });
 
-Invitations.deny({
+UserInvitations.deny({
   insert: () => true,
   update: () => true,
   remove: () => true
 });
 
-let InvitationsSchema = new SimpleSchema({
+let UserInvitationsSchema = new SimpleSchema({
   email: {
     type: String,
     label: "Email to send invitation to."
@@ -31,4 +31,4 @@ let InvitationsSchema = new SimpleSchema({
   }
 });
 
-Invitations.attachSchema( InvitationsSchema );
+UserInvitations.attachSchema( UserInvitationsSchema );

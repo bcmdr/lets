@@ -38,9 +38,9 @@ publicRoutes.route( '/reset-password/:token', {
   }
 });
 
-publicRoutes.route( '/invite/:token', {
-  name: 'invite',
+publicRoutes.route( '/user-invite/:token', {
+  name: 'user-invite',
   action() {
-    BlazeLayout.render( 'default', { yield: 'invite' } );
+    BlazeLayout.render( 'default', { yield: 'userInvite' } );
   }
 });

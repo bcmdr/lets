@@ -1,16 +1,12 @@
-<template name="invite">
+<template name="userInvite">
   <div class="row">
-    {{#with invitation}}
+    {{#with userInvitation}}
     <div class="col-xs-12 col-sm-6 col-md-4">
       <h3 class="page-header">Accept Invitation</h3>
       <form id="accept-invitation">
         <div class="form-group">
           <label for="emailAddress">Email Address</label>
           <input disabled type="email" name="emailAddress" class="form-control" placeholder="Email Address" value="{{email}}">
-        </div>
-        <div class="form-group">
-          <label for="username"><span class="pull-left">Username</span></label>
-          <input type="text" name="username" class="form-control" placeholder="Username">
         </div>
         <div class="form-group">
           <label for="password"><span class="pull-left">Password</span></label>
@@ -23,7 +19,7 @@
     </div>
     {{else}}
       <div class="col-xs-12">
-        <p class="alert alert-warning">Sorry, doesn't look like this invite is valid cowpoke.</p>
+        <p class="alert alert-warning">Sorry, doesn't look like this invite is valid.</p>
       </div>
     {{/with}}
   </div>

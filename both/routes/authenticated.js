@@ -1,3 +1,9 @@
+const blockUnauthorizedSubmitter = ( context, redirect ) => {
+  if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), [ 'admin', 'submitter' ] ) ) {
+    Modules.both.redirectUser( { redirect: redirect } );
+  }
+};
+
 const authenticatedRedirect = () => {
   if ( !Meteor.loggingIn() && !Meteor.userId() ) {
     FlowRouter.go( 'login' );
@@ -27,5 +33,12 @@ authenticatedRoutes.route( '/viewers', {
   name: 'viewers',
   action() {
     BlazeLayout.render( 'default', { yield: 'viewers' } );
+  }
+});
+
+authenticatedRoutes.route( '/submit', {
+  name: 'submitInvite',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'submitInvite' } );
   }
 });

@@ -1,15 +1,15 @@
 Meteor.methods({
-  sendInvitation( invitation ) {
-    check( invitation, {
+  sendUserInvitation( userInvitation ) {
+    check( userInvitation, {
       email: String,
       role: String
     });
 
     try {
-      Modules.server.sendInvitation({
-        email: invitation.email,
+      Modules.server.sendUserInvitation({
+        email: userInvitation.email,
         token: Random.hexString( 16 ),
-        role: invitation.role,
+        role: userInvitation.role,
         date: ( new Date() ).toISOString()
       });
     } catch( exception ) {

@@ -10,15 +10,15 @@ Template.users.helpers({
       return users;
     }
   },
-  hasInvitations: function() {
-    var invitations = Invitations.find().count();
-    return invitations < 1 ? false : true;
+  hasUserInvitations: function() {
+    var userInvitations = UserInvitations.find().count();
+    return userInvitations < 1 ? false : true;
   },
-  invitations: function() {
-    var invitations = Invitations.find();
+  userInvitations: function() {
+    var userInvitations = UserInvitations.find();
 
-    if ( invitations ) {
-      return invitations;
+    if ( userInvitations ) {
+      return userInvitations;
     }
   }
 });
@@ -36,9 +36,9 @@ Template.users.events({
       }
     });
   },
-  'click .revoke-invite': function( event, template ) {
+  'click .revoke-user-invite': function( event, template ) {
     if ( confirm( "Are you sure? This is permanent." ) ) {
-      Meteor.call( "revokeInvitation", this._id, function( error, response ) {
+      Meteor.call( "revokeUserInvitation", this._id, function( error, response ) {
         if ( error ) {
           Bert.alert( error.reason, "warning" );
         } else {

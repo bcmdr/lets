@@ -1,6 +1,5 @@
 let administrators = [
   {
-    username: 'Shallwi',
     name: { first: 'Team', last: 'Shallwi' },
     email: 'sup@shallwi.co',
     password: Meteor.settings.private.ADMIN_PASSWORD
@@ -8,7 +7,7 @@ let administrators = [
 ];
 
 let generateAccounts = () => {
-  let fakeUserCount = 5,
+  let fakeUserCount = 0,
       usersExist    = _checkIfAccountsExist( administrators.length + fakeUserCount );
 
   if ( !usersExist ) {
@@ -44,7 +43,6 @@ let _checkIfUserExists = ( email ) => {
 
 let _createUser = ( user ) => {
   let userId = Accounts.createUser({
-    username: user.username,
     email: user.email,
     password: user.password,
     profile: {
@@ -66,7 +64,6 @@ let _generateFakeUsers = ( count ) => {
 
   for ( let i = 0; i < count; i++ ) {
     users.push({
-      username: faker.internet.userName(),
       name: { first: faker.name.firstName(), last: faker.name.lastName() },
       email: faker.internet.email(),
       password: 'password'

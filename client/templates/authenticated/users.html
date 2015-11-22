@@ -1,6 +1,6 @@
 <template name="users">
   {{#if isInRole 'admin'}}
-    {{> sendInvitationModal}}
+    {{> sendUserInvitationModal}}
 
     <h4 class="page-header">Users</h4>
     <table class="table table-bordered">
@@ -27,10 +27,10 @@
     </table>
 
     <div class="page-header clearfix">
-      <h4 class="pull-left">Invitations</h4>
-      <button class="btn btn-success pull-right" data-toggle="modal" data-target="#send-invitation-modal">Send Invitation</button>
+      <h4 class="pull-left">User Invitations</h4>
+      <button class="btn btn-success pull-right" data-toggle="modal" data-target="#send-user-invitation-modal">Send User Invitation</button>
     </div>
-    {{#if hasInvitations}}
+    {{#if hasUserInvitations}}
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -41,20 +41,20 @@
           </tr>
         </thead>
         <tbody>
-          {{#each invitations}}
+          {{#each userInvitations}}
             <tr>
               <td class="text-left text-middle">{{email}}</td>
               <td class="text-center text-middle">{{role}}</td>
               <td class="text-center text-middle">{{humanDate date}}</td>
               <td class="text-center">
-                <button type="button" class="btn btn-danger revoke-invite">Revoke</button>
+                <button type="button" class="btn btn-danger revoke-user-invite">Revoke</button>
               </td>
             </tr>
           {{/each}}
         </tbody>
       </table>
     {{else}}
-      <p class="alert alert-warning">No open invitations.</p>
+      <p class="alert alert-warning">No open user invitations.</p>
     {{/if}}
 
   {{/if}}
