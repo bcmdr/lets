@@ -1,9 +1,12 @@
 Template.header.onCreated( () => {
-  Template.instance().subscribe( 'publicUsers' );
+  Template.instance().subscribe( 'userData' );
+});
+
+Template.header.helpers({
 });
 
 Template.header.events({
-  'click .logout' () {
+  'click .logout': function () {
     Meteor.logout( ( error ) => {
       if ( error ) {
         Bert.alert( error.reason, 'warning' );

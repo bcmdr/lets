@@ -12,7 +12,14 @@ const publicRoutes = FlowRouter.group({
 publicRoutes.route( '/login', {
   name: 'login',
   action() {
-    BlazeLayout.render( 'default', { yield: 'loginSignup' } );
+    BlazeLayout.render( 'default', { yield: 'login' } );
+  }
+});
+
+publicRoutes.route( '/signup', {
+  name: 'signup',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'signup' } );
   }
 });
 

@@ -9,6 +9,9 @@ let _validate = ( form, template ) => {
 let validation = ( template ) => {
   return {
     rules: {
+      username: {
+        required: true,
+      },
       emailAddress: {
         required: true,
         email: true
@@ -19,12 +22,15 @@ let validation = ( template ) => {
       }
     },
     messages: {
+      username: {
+        required: 'Please choose a username.'
+      },
       emailAddress: {
-        required: 'Please enter your email address here.',
-        email: 'Is this email address legit?'
+        required: 'Please enter your email address.',
+        email: 'Is this email address valid?'
       },
       password: {
-        required: 'Please enter a password here.',
+        required: 'Please enter a password.',
         minlength: 'Use at least six characters, please.'
       }
     },
@@ -33,18 +39,17 @@ let validation = ( template ) => {
 };
 
 let _handleSignup = ( template ) => {
-  let password = template.find( '[name="password"]' ).value;
-
   let user = {
+    username: template.find( '[name="username"]' ).value,
     email: template.find( '[name="emailAddress"]' ).value,
-    password: Accounts._hashPassword( password )
+    password: template.find( '[name="password"]' ).value
   };
 
-  Meteor.createUser( user, ( error ) => {
+  Accounts.createUser( user, ( error ) => {
     if ( error ) {
       Bert.alert( error.reason, 'danger' );
     } else {
-      Meteor.loginWithPassword( user.email, password );
+      Bert.alert( 'Welcome!', 'success' );
     }
   });
 };

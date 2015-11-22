@@ -19,6 +19,7 @@ Template.userInvite.events({
     let password = template.find( '[name="password"]' ).value;
 
     let user = {
+      username: template.find( '[name="username"]' ).value,
       email: template.find( '[name="emailAddress"]' ).value,
       password: Accounts._hashPassword( password ),
       token: FlowRouter.current().params.token
