@@ -1,7 +1,7 @@
 {
-  "name": "application-name",
-  "version": "1.0.0",
-  "description": "Application description.",
+  "name": "Let's",
+  "version": "0.0.2",
+  "description": "Where awesome people invite each other to do awesome things.",
   "scripts": {
     "start": "meteor --settings settings-development.json",
     "staging": "meteor deploy lets-staging.meteor.com --settings settings-development.json",

@@ -9,7 +9,7 @@ const publicRoutes = FlowRouter.group({
   triggersEnter: [ publicRedirect ]
 });
 
-authenticatedRoutes.route( '/', {
+publicRoutes.route( '/', {
   name: 'index',
   action() {
     BlazeLayout.render( 'default', { yield: 'index' } );

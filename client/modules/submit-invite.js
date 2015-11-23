@@ -43,8 +43,8 @@ let _handleSubmitInvite = ( template ) => {
     if ( error ) {
       Bert.alert( error.reason, 'danger' );
     } else {
-      Bert.alert( 'Invite Submitted!', 'success' );
       FlowRouter.go( 'index' );
+      Bert.alert( 'Invite Submitted!', 'success' );
     }
   });
 };

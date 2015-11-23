@@ -1,5 +1,5 @@
 <template name="header">
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-inverse" role="navigation">
 	  <div class="container">
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -8,7 +8,9 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="{{pathFor 'index'}}">Application Name</a>
+	      <a class="navbar-brand" href="{{brandLink}}">
+	        <img alt="Let's" src="/assets/brand-image-small.png">
+				</a>
 	    </div>
 	    <div id="navbar-collapse" class="collapse navbar-collapse">
 	    	{{#if currentUser}}

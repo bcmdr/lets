@@ -36,3 +36,10 @@ authenticatedRoutes.route( '/submit', {
     BlazeLayout.render( 'default', { yield: 'submitInvite' } );
   }
 });
+
+authenticatedRoutes.route( '/interests', {
+  name: 'interests',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'interests' } );
+  }
+});

@@ -6,3 +6,9 @@ Template.invites.onCreated(function() {
     instance.subscribe('usernames');
   });
 });
+
+Template.invites.helpers({
+  invites: function() {
+    return Invites.find({}, {sort: {createdOn: -1}}) || {};
+  }
+});
