@@ -39,17 +39,19 @@ let validation = ( template ) => {
 };
 
 let _handleSignup = ( template ) => {
+  let password = template.find( '[name="password"]' ).value;
+
   let user = {
     username: template.find( '[name="username"]' ).value,
     email: template.find( '[name="emailAddress"]' ).value,
-    password: template.find( '[name="password"]' ).value
+    password: Accounts._hashPassword( password )
   };
 
-  Accounts.createUser( user, ( error ) => {
+  Meteor.call( 'addUser', user, function( error, response ) {
     if ( error ) {
-      Bert.alert( error.reason, 'danger' );
+      Bert.alert( error.reason, 'warning' );
     } else {
-      Bert.alert( 'Welcome!', 'success' );
+      Meteor.loginWithPassword( user.email, password );
     }
   });
 };

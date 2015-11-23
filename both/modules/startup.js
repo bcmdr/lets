@@ -1,7 +1,3 @@
-let startup = () => {
-  _setAccountsOnLogin();
-};
-
-var _setAccountsOnLogin = () => Modules.both.setAccountsOnLogin();
+let startup = () => {};
 
 Modules.both.startup = startup;

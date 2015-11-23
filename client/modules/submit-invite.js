@@ -25,7 +25,7 @@ let validation = ( template ) => {
         required: 'Please enter a title for your invite.'
       },
       url: {
-        email: 'Is this a valid link? (http://...)'
+        url: 'Is this a valid link? (http://...)'
       }
     },
     submitHandler() { _handleSubmitInvite( template ); }

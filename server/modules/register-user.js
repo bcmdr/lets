@@ -1,9 +1,9 @@
 let register = ( options ) => {
-  var user = _createUser( options );
+  var userId = _createUser( options );
 
-  _addUserToRole( user, 'viewer');
+  _addUserToRole( userId, 'viewer');
 
-  return user;
+  return userId;
 };
 
 let _createUser = ( options ) => {
@@ -14,8 +14,8 @@ let _createUser = ( options ) => {
   }
 };
 
-let _addUserToRole = ( user, role ) => {
-  Roles.setUserRoles( user, role );
+let _addUserToRole = ( userId, role ) => {
+  Roles.setUserRoles( userId, role );
 };
 
 Modules.server.registerUser = register;

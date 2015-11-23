@@ -1,0 +1,85 @@
+$radius: 6px;
+
+.invite {
+  background-color: $light-color;
+  color: white;
+  margin-bottom: 10px;
+  font-family: $light-font;
+  border-radius: $radius;
+}
+.invite a, .invite a:hover {
+  color: white;
+  cursor: pointer;
+}
+.invite a:hover {
+  text-decoration: none;
+}
+.invite-info {
+  padding: 10px 0px;
+  background-color: $medium-color;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+.invite-date {
+  float: right;
+}
+.invite-main{
+  padding: 15px 0px;
+  position: relative;
+}
+.invite-title {
+  font-size: 1.6em;
+  line-height: 1.2em;
+  margin: 0px;
+  clear: left;
+}
+.hide-details-button, .show-details-button {
+  background-color: $medium-color;
+  text-align: center;
+}
+.show-details-button {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+.show-hide-details-icon {
+  padding: 10px 0px;
+}
+.invite-description {
+  padding-top: 5px;
+  font-size: 1.2em;
+}
+.interest-button, .remove-interest-button{
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  float: right;
+  width: 30%;
+  min-width: 100px;
+  max-width: 125px;
+}
+.invite-details {
+  padding: 0px 10px;
+}
+.invite-link-wrapper, .interested-list-wrapper {
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+.invite-link-wrapper {
+  padding: 5px;
+  background-color: $medium-color;
+}
+.invite-link {
+  margin-bottom: 0px;
+}
+.interested-list-wrapper {
+  padding: 5px;
+  background-color: $medium-color;
+}
+.interested-list {
+  margin-bottom: 0px;
+}
+.invite-options {
+  padding: 10px 0px;
+}

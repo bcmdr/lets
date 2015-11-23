@@ -1,0 +1,63 @@
+$brand-image-height: 40px;
+
+.navbar-inverse {
+  background-color: $light-color;
+  border-radius: 0px;
+  border: none;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-brand {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  margin-left: 15px;
+  padding: 0px;
+  height: $brand-image-height;
+}
+.navbar-brand img {
+  height: $brand-image-height;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: $medium-color;
+}
+
+@media (max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
+    border-color: $medium-color;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+    background-color: $medium-color;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: white;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #fff;
+    background-color: #080808;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #444;
+    background-color: transparent;
+  }
+}
+
+.welcome-jumbotron {
+  color: white;
+  background-color: $light-color;
+}

@@ -1,0 +1,76 @@
+<template name="invite">
+  <div class="container-fluid invite">
+    <div class="row invite-info">
+      <div class="col-xs-6">
+        <div class="invite-creation-info">
+          {{username owner}}
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <span class="invite-date">{{formatDate createdOn}}</span>
+      </div>
+    </div> <!-- inviteInfoPrimary -->
+    <div class="row invite-main">
+      <div class="col-xs-12">
+        <a class="interest-button-link" href="#">
+
+          {{#unless isInterested}}
+            {{#if isHovering}}
+              <img class="interest-button" src="/assets/facebutton-inactive-hover.png" />
+            {{else}}
+              <img class="interest-button" src="/assets/facebutton-inactive.png" />
+            {{/if}}
+          {{else}}
+            {{#if isHovering}}
+              <img class="remove-interest-button" src="/assets/facebutton-active-hover.png" />
+            {{else}}
+              <img class="remove-interest-button" src="/assets/facebutton-active.png" />
+            {{/if}}
+          {{/unless}}
+        </a>
+        <h4 class="invite-title">{{title}}</h4>
+      </div>
+    </div> <!-- invite-main -->
+    <div class="row">
+      <div class="col-xs-12">
+        {{#if detailsHidden}}
+          <div class="row show-details-button">
+            <span class="show-hide-details-icon glyphicon glyphicon-menu-down"></span>
+          </div>
+        {{else}}
+          <div class="row hide-details-button">
+            <span class="show-hide-details-icon glyphicon glyphicon-menu-up"></span>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="hideable" style="display: {{displayValue}}">
+      {{#if description}}
+        <div class="row invite-description">
+          <div class="col-xs-12">
+              <p class="invite-description">{{description}}</p>
+          </div>
+        </div>
+      {{/if}}
+      <div class="row invite-details">
+        {{#if url}}
+          <div class="col-xs-12 invite-link-wrapper">
+            <a class="invite-link" href="{{url}}">{{formatUrl url}}</a>
+          </div>
+        {{/if}}
+        {{#if interested}}
+          <div class="col-xs-12 interested-list-wrapper">
+            <p class="interested-list">{{interestedList}}</p>
+          </div>
+        {{/if}}
+      </div> <!-- invite-details -->
+      <div class="row invite-options">
+        <div class="col-xs-12">
+          {{#if isOwner}}
+            <a class="remove-invite">Delete</a>
+          {{/if}}
+        </div>
+      </div> <!-- invite-options -->
+    </div> <!-- hideable -->
+  </div> <!-- invite -->
+</template>

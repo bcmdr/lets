@@ -9,7 +9,7 @@ Meteor.methods({
     });
 
     if ( !Roles.userIsInRole( userId, [ 'admin', 'submitter' ] ) ) {
-      throw new Meteor.Error( 'not-authorized', 'You must be a submitter to post invites.' ); 
+      throw new Meteor.Error( 'not-authorized', 'You must be a submitter to post invites.' );
     }
 
     try {

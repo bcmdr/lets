@@ -1,4 +1,4 @@
-UserInvitations = new Meteor.Collection( 'invitations' );
+UserInvitations = new Meteor.Collection( 'userInvitations' );
 
 UserInvitations.allow({
   insert: () => false,
