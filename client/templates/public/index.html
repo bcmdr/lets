@@ -1,0 +1,12 @@
+<template name="index">
+  {{#unless currentUser}}
+    <div class="jumbotron welcome-jumbotron text-center" style="padding: 20px;">
+      <h2>Welcome to Let's!</h2>
+      <p>Where awesome people invite each other to do awesome things.</p>
+      <p>
+        <a class="btn btn-success" href="{{pathFor 'signup'}}" role="button">Join the Fun</a>
+      </p>
+    </div>
+  {{/unless}}
+  {{>invites}}
+</template>
