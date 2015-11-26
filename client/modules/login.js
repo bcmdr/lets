@@ -37,8 +37,6 @@ let _handleLogin = ( template ) => {
   Meteor.loginWithPassword( email, password, ( error ) => {
     if ( error ) {
       Bert.alert( error.reason, 'warning' );
-    } else {
-      Bert.alert( 'Logged in!', 'success' );
     }
   });
 };
