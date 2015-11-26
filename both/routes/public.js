@@ -1,12 +1,5 @@
-const publicRedirect = () => {
-  if ( Meteor.userId() ) {
-    FlowRouter.go( 'index' );
-  }
-};
-
 const publicRoutes = FlowRouter.group({
-  name: 'public',
-  triggersEnter: [ publicRedirect ]
+  name: 'public'
 });
 
 publicRoutes.route( '/', {
@@ -56,5 +49,12 @@ publicRoutes.route( '/user-invite/:token', {
   name: 'user-invite',
   action() {
     BlazeLayout.render( 'default', { yield: 'userInvite' } );
+  }
+});
+
+publicRoutes.route( '/invites/:_id', {
+  name: 'single-invite',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'singleInvite' } );
   }
 });

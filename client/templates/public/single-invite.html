@@ -1,0 +1,10 @@
+<template name="singleInvite">
+    <h2>Single Invite</h2>
+    {{#if Template.subscriptionsReady}}
+      {{#with singleInvite}}
+        {{>invite}}
+      {{/with}}
+    {{else}}
+      {{>spinner}}
+    {{/if}}
+</template>

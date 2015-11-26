@@ -1,10 +1,10 @@
 {
-  "name": "Let's",
+  "name": "Lets",
   "version": "0.0.2",
   "description": "Where awesome people invite each other to do awesome things.",
   "scripts": {
     "start": "meteor --settings settings-development.json",
     "staging": "meteor deploy lets-staging.meteor.com --settings settings-development.json",
-    "production": "meteor deploy lets-production.meteor.com --settings settings-production.json"
+    "production": "modulus env set METEOR_SETTINGS \"$(cat settings-production.json)\" -p 'Lets - Production' && modulus deploy -p 'Lets - Production'"
   }
 }
