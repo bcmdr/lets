@@ -29,8 +29,12 @@
           {{/unless}}
         </a>
         <h4 class="invite-title"><a href="{{pathFor 'single-invite'}}/{{_id}}">{{title}}</a></h4>
+        {{#if description}}
+          <p class="invite-description">{{description}}</p>
+        {{/if}}
       </div>
     </div> <!-- invite-main -->
+    <!-- Hidable details
     <div class="row">
       <div class="col-xs-12">
         {{#if detailsHidden}}
@@ -45,32 +49,26 @@
       </div>
     </div>
     <div class="hideable" style="display: {{displayValue}}">
-      {{#if description}}
-        <div class="row invite-description">
-          <div class="col-xs-12">
-              <p class="invite-description">{{description}}</p>
-          </div>
+    -->
+    <div class="row invite-details">
+      {{#if url}}
+        <div class="col-xs-12 invite-link-wrapper">
+          <a class="invite-link" href="{{url}}">{{formatUrl url}}</a>
         </div>
       {{/if}}
-      <div class="row invite-details">
-        {{#if url}}
-          <div class="col-xs-12 invite-link-wrapper">
-            <a class="invite-link" href="{{url}}">{{formatUrl url}}</a>
-          </div>
-        {{/if}}
-        {{#if interested}}
-          <div class="col-xs-12 interested-list-wrapper">
-            <p class="interested-list">{{interestedList}}</p>
-          </div>
-        {{/if}}
-      </div> <!-- invite-details -->
-      <div class="row invite-options">
-        <div class="col-xs-12">
-          {{#if isOwner}}
-            <a class="remove-invite">Delete</a>
-          {{/if}}
+      {{#if interested}}
+        <div class="col-xs-12 interested-list-wrapper">
+          <p class="interested-list">{{interestedList}}</p>
         </div>
-      </div> <!-- invite-options -->
-    </div> <!-- hideable -->
+      {{/if}}
+    </div> <!-- invite-details -->
+    <div class="row invite-options">
+      <div class="col-xs-12">
+        {{#if isOwner}}
+          <a class="remove-invite">Delete</a>
+        {{/if}}
+      </div>
+    </div> <!-- invite-options -->
+    <!-- </div> hideable -->
   </div> <!-- invite -->
 </template>

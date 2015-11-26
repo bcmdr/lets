@@ -5,3 +5,7 @@ body {
 body, .invite-title {
   font-family: $regular-font;
 }
+
+a, a:active {
+  text-decoration: none !important;
+}

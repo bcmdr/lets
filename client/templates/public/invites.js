@@ -1,10 +1,6 @@
 Template.invites.onCreated(function() {
-  var instance = this;
-
-  instance.autorun(function() {
-    instance.subscribe('invites');
-    instance.subscribe('usernames');
-  });
+  Template.instance().subscribe( 'invites' );
+  Template.instance().subscribe( 'usernames' );
 });
 
 Template.invites.helpers({

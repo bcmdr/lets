@@ -1,6 +1,6 @@
 Template.invite.onCreated( function () {
   this.state = new ReactiveDict();
-  this.state.set('detailsHidden', true);
+  this.state.set('detailsHidden', false);
 });
 
 let getUsername = function (userId) {
@@ -69,7 +69,7 @@ Template.invite.helpers({
     }
 
     // Final Append
-    string = string.concat(" Interested");
+    string = string.concat(" interested");
     return string;
   }
 });
